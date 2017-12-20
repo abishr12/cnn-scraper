@@ -1,4 +1,8 @@
-.jumbotron h1 {
-  color: white; }
+.jumbotron {
+  background-image: url("../images/cnn-background.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .jumbotron h1 {
+    color: black; }
 
 /*# sourceMappingURL=styles.css.map */

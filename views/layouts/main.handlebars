@@ -4,26 +4,57 @@
 	<meta charset="UTF-8">
 		<title>Breaking News From CNN</title>
 		<link rel="shortcut icon" type="image/png" href="./images/cnn-logo.png" />
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+		<link rel = "stylesheet" href ="./styles/styles.css" />
+
 
 	</head>
 	<body>
+
+		<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-primary">
+			<a class="navbar-brand" style="color:white;margin-left: 90px;font-size: 30px;">CNN Scraper</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+
+
+
+					<li class="nav-item active">
+						<a class="nav-link" id='home' href="/">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" id='saved-articles' style="margin-right: 80px;" href="/saved-articles">Saved Articles</a>
+					</li>
+					<button id="scrape-button" class="btn btn-outline-success my-2 my-sm-0" href= "/scrape" style= "color:white" type="submit">Scrape Articles</button>
+			</div>
+		</nav>
+
+
 		<div class="jumbotron">
-  		<h1 class="display-3">Hello, world!</h1>
-		  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-		  <hr class="my-4">
-		  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-		  <p class="lead">
-		    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-		  </p>
+  		<h1 class="display-3">Find All The Latest Headlines From CNN!</h1>
 		</div>
 
-		{{{ body }}}
 
 
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-		<script src="/assets/js/eventHandler.js"></script>
+
+
+		<div class = "container">
+			{{{ body }}}
+		</div>
+
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+
 	</body>
 </html>
