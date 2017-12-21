@@ -15,7 +15,7 @@ module.exports = function(app) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
       var $ = cheerio.load(response.data);
 
-      //console.log(response.data);
+      console.log(response.data);
 
       // Now, we grab every h2 within an article tag, and do the following:
       $("article h2").each(function(i, element) {
@@ -30,7 +30,7 @@ module.exports = function(app) {
           .children("a")
           .attr("href");
 
-        conosle.log(result);
+        console.log(result);
 
         // // Create a new Article using the `result` object built from scraping
         // db.Article.create(result)
