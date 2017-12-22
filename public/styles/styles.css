@@ -22,5 +22,8 @@
   .articles .btn-outline-warning:hover {
     color: white;
     background-color: blue; }
+  .articles .btn-outline-warning:visited {
+    color: white;
+    background-color: yellow; }
 
 /*# sourceMappingURL=styles.css.map */
