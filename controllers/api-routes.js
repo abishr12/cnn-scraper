@@ -23,10 +23,13 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/saved-artiles", (req, res) => {
-    db.Article.find({}).tnen(dbArticle => {
-      console.log(dbArticle);
-      res.render("saved", ("article": dbArticle));
+  app.get("/saved-articles", (req, res) => {
+    db.Article.find({}).then(dbArticle => {
+      var hbsObject = {
+        article: dbArticle
+      };
+      console.log(hbsObject);
+      res.render("saved", hbsObject);
     });
   });
 
