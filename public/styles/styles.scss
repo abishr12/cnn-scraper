@@ -9,3 +9,23 @@
     color: black;
   }
 }
+
+.articles {
+  margin-top: 10px;
+  border-style: double;
+
+  button[type="save"] {
+    box-shadow: 1px 1px 11px grey;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+    cursor: pointer;
+    border-color: blue;
+    color: blue;
+    min-width: 100%;
+  }
+  .btn-outline-warning:hover {
+    color: white;
+    background-color: blue;
+  }
+}
