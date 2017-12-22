@@ -15,8 +15,8 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Requiring our models for syncing
-//const db = require("./models");
+//Requiring our models for syncing
+const db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -43,7 +43,7 @@ app.use(express.static("public"));
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/nyt-articles", {
+mongoose.connect("mongodb://localhost/nyt-scraper", {
   useMongoClient: true
 });
 

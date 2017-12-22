@@ -1,7 +1,9 @@
 .jumbotron {
-  background-image: url("../images/cnn-background.png");
+  background-image: url("../images/nyt-background.jpg");
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: -10px;
+  opacity: 0.7; }
   .jumbotron h1 {
     color: black; }
 
