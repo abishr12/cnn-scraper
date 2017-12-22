@@ -5,9 +5,28 @@ var cheerio = require("cheerio");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    res.render("index");
+    // Grab every document in the Articles collection
+    db.Article.find({})
+      .limit(20)
+      .then(function(dbArticle) {
+        // If we were able to successfully find Articles, send them back to the client
+        var hbsObject = {
+          article: dbArticle
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
   });
 
+  app.get("/empty", (req, res) => {
+    db.Article.collection.drop().then(() => {
+      res.send("DB Emptied");
+    });
+  });
   // A GET route for scraping the cnn website
   app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with request
@@ -48,7 +67,7 @@ module.exports = function(app) {
           })
           .catch(function(err) {
             // If an error occurred, send it to the client
-            res.json(err);
+            //res.json(err);
           });
       });
     });
