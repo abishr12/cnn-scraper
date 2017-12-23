@@ -18,14 +18,25 @@ const sendPost = articleId => {
     event.preventDefault();
     console.log("clicked");
     console.log("Article Id ------> ", articleId);
+    console.log(
+      $("#message-text")
+        .val()
+        .trim()
+    );
 
     $.ajax({
       method: "POST",
       url: "/articles/" + articleId,
       data: {
         // Value taken from note textarea
-        body: $("#body-input").val()
+        body: $("#message-text")
+          .val()
+          .trim()
       }
+    }).done(response => {
+      console.log("Comment Posted");
+      $("#message-text").val("");
+      console.log(response);
     });
   });
 };
@@ -51,6 +62,13 @@ $(document).ready(function() {
       .parent()
       .attr("data-id");
 
+    $("#comments-modal").attr("data-articleId", articleId);
+
+    $.get("/grabcomments/" + articleId).done(response => {
+      console.log("Response", response);
+    });
+
+    //Post comments
     sendPost(articleId);
   });
 });

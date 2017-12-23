@@ -41,6 +41,14 @@
       </div>
       <div class="modal-footer">
         <!-- Input previous comments here -->
+        <ul>
+          {{#each article}}
+            {{#if note}}
+              {{note.body}}
+            {{/if}}
+          {{/each}}
+
+        </ul>
       </div>
     </div>
   </div>

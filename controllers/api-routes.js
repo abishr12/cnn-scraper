@@ -34,6 +34,16 @@ module.exports = function(app) {
     });
   });
 
+  //Pull Comments From Saved Articles
+
+  app.get("/grabcomments/:articleId", (req, res) => {
+    db.Article.find({ _id: ObjectId(req.params.articleId) })
+      .populate("note")
+      .then(response => {
+        res.send(response);
+      });
+  });
+
   // Route for saving/updating an Article's associated Note
   app.post("/articles/:id", function(req, res) {
     // Create a new note and pass the req.body to the entry
@@ -50,7 +60,7 @@ module.exports = function(app) {
       })
       .then(function(dbArticle) {
         // If we were able to successfully update an Article, send it back to the client
-        res.json(dbArticle);
+        res.send(dbArticle);
       })
       .catch(function(err) {
         // If an error occurred, send it to the client
