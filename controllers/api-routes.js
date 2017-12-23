@@ -14,7 +14,7 @@ module.exports = function(app) {
         var hbsObject = {
           article: dbArticle
         };
-        console.log(hbsObject);
+        //console.log(hbsObject);
         res.render("index", hbsObject);
       })
       .catch(function(err) {
@@ -25,13 +25,15 @@ module.exports = function(app) {
 
   //Retrieve Saved Articles
   app.get("/saved-articles", (req, res) => {
-    db.Article.find({}).then(dbArticle => {
-      var hbsObject = {
-        article: dbArticle
-      };
-      console.log(hbsObject);
-      res.render("saved", hbsObject);
-    });
+    db.Article.find({})
+      .populate("note")
+      .then(dbArticle => {
+        let hbsObject = {
+          article: dbArticle
+        };
+        console.log(hbsObject);
+        res.render("saved", hbsObject);
+      });
   });
 
   //Pull Comments From Saved Articles
