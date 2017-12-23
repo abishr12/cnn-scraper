@@ -18,6 +18,9 @@ const PORT = process.env.PORT || 3000;
 //Requiring our models for syncing
 const db = require("./models");
 
+//Setting Up Mongo server
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nyt-scraper";
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,7 +46,7 @@ app.use(express.static("public"));
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/nyt-scraper", {
+mongoose.connect(MONGODB_URI, {
   useMongoClient: true
 });
 
