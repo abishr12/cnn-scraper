@@ -37,6 +37,7 @@ const sendPost = articleId => {
       console.log("Comment Posted");
       $("#message-text").val("");
       console.log(response);
+      location.reload();
     });
   });
 };
