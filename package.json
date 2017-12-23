@@ -4,16 +4,14 @@
   "description": "Find all the latest headlines on CNN",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abishr12/cnn-scraper.git"
   },
-  "keywords": [
-    "mongoose",
-    "mongodb"
-  ],
+  "keywords": ["mongoose", "mongodb"],
   "author": "adham bishr",
   "license": "ISC",
   "bugs": {

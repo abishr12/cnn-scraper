@@ -1,1 +1,2 @@
-# cnn-scraper
+# NYT-scraper
+
